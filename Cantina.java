@@ -21,6 +21,10 @@ public class Cantina {
 
         Ingrediente ingredientes = new Ingrediente();
 
+        while(!menu.equals("5")) {
+
+            menu = JOptionPane.showInputDialog("\n 1 - Bacon\n 2 - Mussarela\n 3 - Tomate\n 4 - Queijo\n 5 - Sair ");
+
 
             if (menu.equals("1")) {
                 ingredientes.nome = "Bacon";
@@ -37,6 +41,7 @@ public class Cantina {
                 ingredientes.nome = "Queijo";
             }
 
+        }
 
         Double valorFinal = massa.valor + 2;
 
