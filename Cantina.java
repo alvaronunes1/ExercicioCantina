@@ -13,8 +13,8 @@ public class Cantina {
         cliente.nome = nomeCliente;
 
         Massa massa = new Massa();
-        massa.tipo = tipoMassa;
-        massa.valor = valorMassa;
+        massa.setTipo(tipoMassa);
+        massa.setValor(valorMassa);
 
 
         String menu = JOptionPane.showInputDialog("\n 1 - Bacon\n 2 - Mussarela\n 3 - Tomate\n 4 - Queijo\n 5 - Sair ");
@@ -27,31 +27,31 @@ public class Cantina {
 
 
                 if (menu.equals("1")) {
-                    ingredientes.nome = "Bacon";
+                    ingredientes.setNome("Bacon");
                 }
                 if (menu.equals("2")) {
-                    ingredientes.nome = "Mussarela";
+                    ingredientes.setNome("Mussarela");
                 }
 
                 if (menu.equals("3")) {
-                    ingredientes.nome = "Tomate";
+                    ingredientes.setNome("Tomate");
                 }
 
                 if (menu.equals("4")) {
-                    ingredientes.nome = "Queijo";
+                    ingredientes.setNome("Queijo");
                 }
 
 
-                if (!(menu.equals("1") && menu.equals("2") && menu.equals("3") && menu.equals("4"))) {
+                if (!(menu.equals("1") || menu.equals("2") || menu.equals("3") || menu.equals("4"))) {
                     throw new Exception("Não existe o ingrediente selecionado");
                 }
 
                 menu = JOptionPane.showInputDialog("\n 1 - Bacon\n 2 - Mussarela\n 3 - Tomate\n 4 - Queijo\n 5 - Sair ");
 
 
-                Double valorFinal = massa.valor + 2;
+                Double valorFinal = massa.getValor() + 2;
 
-                JOptionPane.showMessageDialog(null, "Pedido feito para " + cliente.nome + "\n" + massa.tipo + " com " + ingredientes.nome + "\n Valor: " + valorFinal);
+                JOptionPane.showMessageDialog(null, "Pedido feito para " + cliente.nome + "\n" + massa.getTipo() + " com " + ingredientes.getNome() + "\n Valor: " + valorFinal);
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
